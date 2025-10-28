@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Flash Cards</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Math Flash Cards</h1>
+            <div class="stats-bar">
+                <span id="score">Score: 0</span>
+                <span id="streak">Streak: 0</span>
+                <span id="timer"></span>
+            </div>
+        </header>
+
+        <div id="mode-selection" class="mode-selection">
+            <h2>Choose Your Mode</h2>
+            <div class="operation-type">
+                <label>
+                    <input type="checkbox" id="addition" checked> Addition
+                </label>
+                <label>
+                    <input type="checkbox" id="subtraction" checked> Subtraction
+                </label>
+            </div>
+            <div class="mode-buttons">
+                <button class="mode-btn" data-mode="practice">Practice Mode</button>
+                <button class="mode-btn" data-mode="1">1 Minute Test</button>
+                <button class="mode-btn" data-mode="3">3 Minute Test</button>
+                <button class="mode-btn" data-mode="5">5 Minute Test</button>
+                <button class="mode-btn" data-mode="10">10 Minute Test</button>
+            </div>
+        </div>
+
+        <div id="game-area" class="game-area hidden">
+            <div id="feedback" class="feedback"></div>
+            <div class="card">
+                <div class="equation-vertical">
+                    <div class="number-row" id="num1-row"></div>
+                    <div class="number-row operator-row">
+                        <span class="operator" id="operator"></span>
+                        <span class="number" id="num2"></span>
+                    </div>
+                </div>
+                <div class="equation-line"></div>
+                <div class="answer-area">
+                    <input type="number" id="answer-input" autofocus>
+                </div>
+            </div>
+            <button id="submit-btn">Submit</button>
+            <button id="end-session-btn" class="secondary-btn">End Session</button>
+        </div>
+
+        <div id="results-area" class="results-area hidden">
+            <h2>Session Complete!</h2>
+            <div id="session-stats"></div>
+            <div id="awards"></div>
+            <div class="action-buttons">
+                <button id="download-btn">Download Report</button>
+                <button id="new-session-btn">New Session</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
