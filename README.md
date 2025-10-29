@@ -9,7 +9,7 @@ A fun, interactive web-based flashcard game for practicing addition and subtract
 
 ## 🎮 Live Demo
 
-[**Play Now!**](https://your-username.github.io/math-flashcards) - Try the game directly in your browser!
+[**Play Now!**](https://gscoggin.github.io/math-flashcards/) - Try the game directly in your browser!
 
 ## ✨ Features
 
@@ -44,7 +44,7 @@ A fun, interactive web-based flashcard game for practicing addition and subtract
 ### Option 2: Local Development
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/math-flashcards.git
+git clone https://github.com/gscoggin/math-flashcards.git
 
 # Navigate to the project directory
 cd math-flashcards
@@ -153,8 +153,8 @@ The game combines the timeless appeal of traditional flashcards with modern web 
 
 ## 📞 Support
 
-- 🐛 **Bug Reports**: [Open an issue](https://github.com/your-username/math-flashcards/issues)
-- 💡 **Feature Requests**: [Start a discussion](https://github.com/your-username/math-flashcards/discussions)
+- 🐛 **Bug Reports**: [Open an issue](https://github.com/gscoggin/math-flashcards/issues)
+- 💡 **Feature Requests**: [Start a discussion](https://github.com/gscoggin/math-flashcards/discussions)
 - 📧 **Contact**: [Your email or social media]
 
 ---
