@@ -11,7 +11,12 @@ class FlashCardGame {
         this.endTime = null;
         this.timerInterval = null;
         this.currentQuestion = null;
-        this.operations = { addition: true, subtraction: true };
+        this.operations = {
+            addition: true,
+            subtraction: true,
+            multiplication: true,
+            division: true
+        };
         this.sessionHistory = [];
 
         this.correctIcons = ['⭐', '✨', '🌟', '💫', '⚡', '🎯', '✓', '👍', '🎉', '🏆'];
@@ -151,10 +156,17 @@ class FlashCardGame {
         document.getElementById('subtraction').addEventListener('change', (e) => {
             this.operations.subtraction = e.target.checked;
         });
+        document.getElementById('multiplication').addEventListener('change', (e) => {
+            this.operations.multiplication = e.target.checked;
+        });
+        document.getElementById('division').addEventListener('change', (e) => {
+            this.operations.division = e.target.checked;
+        });
     }
 
     startGame(mode) {
-        if (!this.operations.addition && !this.operations.subtraction) {
+        if (!this.operations.addition && !this.operations.subtraction &&
+            !this.operations.multiplication && !this.operations.division) {
             alert('Please select at least one operation type!');
             return;
         }
@@ -212,27 +224,47 @@ class FlashCardGame {
         const operations = [];
         if (this.operations.addition) operations.push('addition');
         if (this.operations.subtraction) operations.push('subtraction');
+        if (this.operations.multiplication) operations.push('multiplication');
+        if (this.operations.division) operations.push('division');
 
         const operation = operations[Math.floor(Math.random() * operations.length)];
 
         if (operation === 'addition') {
-            const a = Math.floor(Math.random() * 21);
-            const b = Math.floor(Math.random() * (21 - a));
+            const a = Math.floor(Math.random() * 10000);
+            const b = Math.floor(Math.random() * 10000);
             return {
                 num1: a,
                 num2: b,
                 operator: '+',
                 answer: a + b
             };
-        } else {
-            const answer = Math.floor(Math.random() * 21);
-            const num2 = Math.floor(Math.random() * (21 - answer));
-            const num1 = answer + num2;
+        } else if (operation === 'subtraction') {
+            const num1 = Math.floor(Math.random() * 10000);
+            const num2 = Math.floor(Math.random() * (num1 + 1));
             return {
                 num1: num1,
                 num2: num2,
                 operator: '-',
-                answer: answer
+                answer: num1 - num2
+            };
+        } else if (operation === 'multiplication') {
+            const a = Math.floor(Math.random() * 21);
+            const b = Math.floor(Math.random() * 21);
+            return {
+                num1: a,
+                num2: b,
+                operator: '×',
+                answer: a * b
+            };
+        } else if (operation === 'division') {
+            const divisor = Math.floor(Math.random() * 20) + 1;
+            const quotient = Math.floor(Math.random() * 21);
+            const dividend = divisor * quotient;
+            return {
+                num1: dividend,
+                num2: divisor,
+                operator: '÷',
+                answer: quotient
             };
         }
     }
